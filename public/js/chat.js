@@ -73,17 +73,12 @@ jQuery('#message-form').on('submit', function (e) {
     e.preventDefault();
 
     var messageTextbox = jQuery('[name=message]');
-
-    if (messageTextbox.val() !== '') {
+      
         socket.emit('createMessage', {
-            from: 'User',
             text: messageTextbox.val()
         }, function () {
             messageTextbox.val('');
         });
-
-
-    };
 });
 
 var locationButton = jQuery('#send-location');
