@@ -18,6 +18,7 @@ function scrollToBottom() {
 
 socket.on('connect', function () {
     var params = jQuery.deparam(window.location.search);
+    params.room = params.room.toLowerCase();
 
     socket.emit('join', params, function (error) {
         if (error) {
@@ -73,12 +74,12 @@ jQuery('#message-form').on('submit', function (e) {
     e.preventDefault();
 
     var messageTextbox = jQuery('[name=message]');
-      
-        socket.emit('createMessage', {
-            text: messageTextbox.val()
-        }, function () {
-            messageTextbox.val('');
-        });
+
+    socket.emit('createMessage', {
+        text: messageTextbox.val()
+    }, function () {
+        messageTextbox.val('');
+    });
 });
 
 var locationButton = jQuery('#send-location');

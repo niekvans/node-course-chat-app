@@ -17,17 +17,25 @@
             </div>
             <div class="form-field">
                 <label>Display name</label>
-                <input type="text" name="name" autofocus/>
+                <input type="text" name="name" autofocus autocomplete="off"/>
             </div>
             <div class="form-field">
-                <label>Room name</label>
-                <input type="text" name="room"/>
+                    <label>Join existing room</label>
+                    <div id="room-selector"></div>
+                </div>
+            <div class="form-field">
+                <label>Start new room</label>
+                <input type="text" name="room" autocomplete="off"/>
             </div>
             <div class="form-field">
                 <button>Join</button>
             </div>
         </form>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
