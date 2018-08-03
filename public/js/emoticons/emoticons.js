@@ -49,18 +49,29 @@ jQuery('#emoticons-smileys').on('click', function () {
     smileys.toggleClass("hidden");
     animals.addClass("hidden");
     heads.addClass("hidden");
+    testAll();
 });
 
 jQuery('#emoticons-animal-smileys').on('click', function () {
     animals.toggleClass("hidden");
     smileys.addClass("hidden");
     heads.addClass("hidden");
+    testAll();
 });
 
 jQuery('#emoticons-head-smileys').on('click', function () {
     heads.toggleClass("hidden");
     smileys.addClass("hidden");
     animals.addClass("hidden");
+    testAll();
 });
 
-// module.exports = insertEmoticons;
+function testAll(){
+    console.log(smileys.hasClass("hidden"));
+    if(smileys.hasClass("hidden")&&animals.hasClass("hidden")&&heads.hasClass("hidden")){
+        jQuery('#emoticon__panel').addClass("hidden");
+    }
+    else{
+        jQuery('#emoticon__panel').removeClass("hidden");
+    }
+}

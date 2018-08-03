@@ -14,7 +14,25 @@ function scrollToBottom() {
 
     if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
         messages.scrollTop(scrollHeight);
+        removeDot();
     }
+    else {
+        addDot();
+    }
+
+    if (document.hidden) {
+        addDot();
+    }
+};
+
+function removeDot() {
+    console.log('removing dot');
+    jQuery('#favicon').attr('href', '/images/chat.png');
+};
+
+function addDot() {
+    console.log('adding dot');
+    jQuery('#favicon').attr('href', '/images/chat_dot.png');
 };
 
 socket.on('connect', function () {
@@ -28,7 +46,6 @@ socket.on('connect', function () {
             window.history.replaceState({}, "page", "chat.html");
         }
     });
-
 
 });
 
@@ -107,4 +124,3 @@ locationButton.on('click', function () {
     });
 
 });
-

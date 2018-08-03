@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Chat | ChatApp</title>
     <meta name="viewport" content="width=device-width, intitial-scale=1 user-scalable=no">
+    <link id="favicon" rel="shortcut icon" type="image/x-icon" href="/images/chat.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -25,16 +26,19 @@
 
             <button id="send-location">Send location</button>
         </div>
-
-        <div class="emoticon__panel">
-            <ol id="chat__emoticons" class="hidden" class="chat__emoticons"></ol>
-            <ol id="chat__animal__emoticons" class="hidden" class="chat__emoticons"></ol>
-            <ol id="chat__head__emoticons" class="hidden" class="chat__emoticons"></ol>
-        </div>
-        <div class="emoticon__nav">
-            <a class="emoticon__button" id="emoticons-smileys">😃</a>
-            <a class="emoticon__button" id="emoticons-animal-smileys">😺</a>
-            <a class="emoticon__button" id="emoticons-head-smileys">🧒</a>
+        <div class="emoticon__group">
+            <div id="emoticon__panel" class="hidden">
+                <div class="emoticon__panel">
+                    <ol id="chat__emoticons" class="hidden" class="chat__emoticons"></ol>
+                    <ol id="chat__animal__emoticons" class="hidden" class="chat__emoticons"></ol>
+                    <ol id="chat__head__emoticons" class="hidden" class="chat__emoticons"></ol>
+                </div>
+            </div>
+            <div class="emoticon__nav">
+                <a class="emoticon__button" id="emoticons-smileys">😃</a>
+                <a class="emoticon__button" id="emoticons-animal-smileys">😺</a>
+                <a class="emoticon__button" id="emoticons-head-smileys">🧒</a>
+            </div>
         </div>
     </div>
 
