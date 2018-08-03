@@ -1,5 +1,6 @@
 var socket = io();
 
+
 function scrollToBottom() {
     // Selectors
     var messages = jQuery('#messages');
@@ -18,21 +19,24 @@ function scrollToBottom() {
 
 socket.on('connect', function () {
     var params = jQuery.deparam(window.location.search);
-    params.room = params.room.toLowerCase();
-
+    if(params.room) { params.room = params.room.toLowerCase()};
+    if(params.roomSelector) { params.roomSelector = params.roomSelector.toLowerCase()};
     socket.emit('join', params, function (error) {
         if (error) {
             alert(error);
             window.location.href = '/';
         }
         else {
-
+            window.history.replaceState({}, "page", "chat.html");
         }
     });
+
+
 });
 
 socket.on('disconnect', function () {
     console.log('Disconnected from server');
+    window.location.href = '/';
 });
 
 socket.on('updateUserList', function (users) {
@@ -63,11 +67,14 @@ socket.on('newLocationMessage', function (message) {
     var html = Mustache.render(template, {
         url: message.url,
         createdAt: formattedTime,
-        from: message.from
+        from: message.from,
+        latitude: message.latitude,
+        longitude: message.longitude
     });
 
     jQuery('#messages').append(html);
     scrollToBottom();
+
 });
 
 jQuery('#message-form').on('submit', function (e) {
@@ -102,3 +109,4 @@ locationButton.on('click', function () {
     });
 
 });
+

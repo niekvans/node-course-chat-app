@@ -19,7 +19,7 @@
   
   button {
     border: none;
-    background: #265f82;
+    background: #265f82 !important;
     color: white;
     cursor: pointer;
     padding: 10px;
@@ -28,14 +28,14 @@
   
   button:hover {
     border: none;
-    background: #1F4C69;
+    background: #1F4C69 !important;
     color: white;
     padding: 10px;
   }
   
   button:disabled {
     cursor: default;
-    background: #698ea5;
+    background: #698ea5 !important;
   }
   
   .centered-form {
@@ -153,6 +153,10 @@
     list-style-type: none;
     padding: 10px;
   }
+
+  .hidden {
+    display: none;
+  }
   
   .message {
     padding: 10px;
@@ -171,6 +175,36 @@
   .message__title span {
     color: #999;
   }
+
+  .emoticon__nav {
+    overflow: hidden;
+  }
+
+  .emoticon__nav a {
+    float: left;
+    display: block;
+    padding: 14px 16px;
+  }
+
+  .emoticon__panel {
+    /* display: grid; */
+    background-color: white;
+    background: white;
+    overflow-y: scroll;
+    /* padding: 10px; */
+    width: 100%;
+    max-height: 100px;
+}
+
+.emoticon__button {
+  display: inline-block;
+  border: none;
+  padding: 3px;
+  background-color: white;
+  background: white;
+  cursor: pointer;
+  transition: background .3s ease;
+}
   
   @media (max-width: 600px) {
     * {
@@ -192,4 +226,33 @@
     .chat__footer button {
       margin-right: 0px;
     }
+
+    .chat__emoticons {
+      margin-bottom: 10px;
+    }
+
+.icon-bar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
   }
