@@ -31,7 +31,7 @@ io.on('connection', (socket) => {
         if (params.room && params.roomSelector) {
             return callback('Please choose between starting a new room or joining a room.');
         }
-        if (userList.getActiveRooms().indexOf(params.room) >= 0) {
+        if (userList.getActiveRoomsLowerCase().indexOf(params.room.toLowerCase()) >= 0) {
             return callback(`Room ${params.room} already exists.`);
         }
         params.room = params.room || params.roomSelector;

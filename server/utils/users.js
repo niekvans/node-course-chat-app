@@ -46,6 +46,14 @@ class Users {
 
         return _.uniq(roomArray);
     }
+    
+    getActiveRoomsLowerCase() {
+        var roomArray = this.users.map((user) => {
+            return user.room.toLowerCase();
+        });
+
+        return _.uniq(roomArray);
+    }
 
 }
 
