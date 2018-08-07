@@ -73,7 +73,9 @@ socket.on('newMessage', function (message) {
     });
 
     jQuery('#messages').append(html);
-    scrollToBottom();
+    if(message.text !== 'Welcome to the chat app'){
+        scrollToBottom();
+    }
 });
 
 socket.on('newLocationMessage', function (message) {
